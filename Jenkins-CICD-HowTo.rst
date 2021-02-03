@@ -1,7 +1,7 @@
-We have two servers, one for the remote git repository
+We have two servers, one for hosting the remote git repository
 (git-server-ip-address), and another (my-server-ip-address) for
 running jenkins.  my-server-ip-address will also run our web
-application, which is to be built using jenkins pipeline.  We need to
+application, which is to be built using the jenkins pipeline.  We need to
 establish the relationship between git-server-ip-address and
 my-server-ip-address through jenkins, so that jenkins is able to fetch
 code from git-server-ip-address, build it and run it.
