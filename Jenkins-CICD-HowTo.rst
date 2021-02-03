@@ -1,10 +1,10 @@
 We have two servers, one for hosting the remote git repository
-(git-server-ip-address), and another (my-server-ip-address) for
-running jenkins.  my-server-ip-address will also run our web
+(``git-server-ip-address``), and another (``my-server-ip-address``) for
+running jenkins.  ``my-server-ip-address`` will also run our web
 application, which is to be built using the jenkins pipeline.  We need to
 establish the relationship between git-server-ip-address and
-my-server-ip-address through jenkins, so that jenkins is able to fetch
-code from git-server-ip-address, build it and run it.
+``my-server-ip-address`` through jenkins, so that jenkins is able to fetch
+code from ``git-server-ip-address``, build it and run it.
 
 
 Get the jenkins key
@@ -83,11 +83,11 @@ Put Jenkinsfile in the root directory of the web app EnglishPal
 Specify branch source: ``git@git-server-ip-address:EnglishPal``.
 Need to append jenkins' public ssh key to git server's key set (need some work).
 Switch to jenkins account: ``sudo su jenkins``.
-The public ssh key needs to be generated (by using the ssh-keygen command) and it is stored at /var/lib/jenkins/.ssh/id_rsa.pub.
-Append id_rsa.pub to the file .ssh/authorized_keys located at git-server-ip-address.
+The public ssh key needs to be generated (by using the ssh-keygen command) and it is stored at ``/var/lib/jenkins/.ssh/id_rsa.pub``.
+Append id_rsa.pub to the file ``.ssh/authorized_keys`` located at ``git-server-ip-address``.
 
 Jenkins checks out code from a repository after each push to its
-workspace (/var/lib/jenkins/workspace) and run the commands specified
+workspace (``/var/lib/jenkins/workspace``) and run the commands specified
 in Jenkinsfile.
 
 
@@ -121,7 +121,7 @@ in Jenkinsfile.
     }
     
 
-Now we could run the web app at my-server-ip-address:91.
+Now we could run the web app at ``my-server-ip-address:91``.
 
 
 References
