@@ -11,18 +11,18 @@ Get the jenkins key
 ---------------------
 
 
-`curl https://pkg.jenkins.io/debian-stable/jenkins.io.key > key`
+``curl https://pkg.jenkins.io/debian-stable/jenkins.io.key > key``
 
-`sudo apt-key add key`
+``sudo apt-key add key``
 
-`sudo apt-get update`
+``sudo apt-get update``
 
 
 
 Install jenkins
 --------------------
 
-sudo apt-get install jenkins
+``sudo apt-get install jenkins``
 
 
 Note: execute the above command under root account.
@@ -35,20 +35,24 @@ Change port
 
 Edit /etc/init.d/jenkins.  Find the line including 'check_tcp_port'.
 
-`sudo nano /etc/init.d/jenkins`
+``sudo nano /etc/init.d/jenkins``
 
 Change 8080 (the default) to 8081 if 8080 is taken.
 
 Open firewall to allow the port 8081 such that we could visit jenkins from http://my-server-ip-address:8081.
 
-`sudo ufw allow 8081`
+``sudo ufw allow 8081``
 
 Turn on the jenkins service
 ----------------------------------
 
-`sudo systemctl start jenkins`
+Start the jenkins service.
 
-Check status.  `sudo systemctl status jenkins`
+``sudo systemctl start jenkins``
+
+Check status.
+
+``sudo systemctl status jenkins``
 
 
 Setup jenkins using a web browser
@@ -60,7 +64,7 @@ Visit http://my-server-ip-address:8081/.
 Get the initial password for admin
 --------------------------------------------
 
-`sudo cat /var/lib/jenkins/secrets/initialAdminPassword`
+``sudo cat /var/lib/jenkins/secrets/initialAdminPassword``
 
 Create an administrative account.
 
@@ -70,15 +74,15 @@ Give account name jenkins proper permission
 
 Give jenkins the docker permission if it is to build a web application that uses Docker.
 
-`sudo usermod -a -G docker jenkins`
+``sudo usermod -a -G docker jenkins``
 
 
 Put Jenkinsfile in the root directory of the web app EnglishPal
 -----------------------------------------------------------------
 
-Specify branch source: `git@git-server-ip-address:EnglishPal`.
+Specify branch source: ``git@git-server-ip-address:EnglishPal``.
 Need to append jenkins' public ssh key to git server's key set (need some work).
-Switch to jenkins account: `sudo su jenkins`.
+Switch to jenkins account: ``sudo su jenkins``.
 The public ssh key needs to be generated (by using the ssh-keygen command) and it is stored at /var/lib/jenkins/.ssh/id_rsa.pub.
 Append id_rsa.pub to the file .ssh/authorized_keys located at git-server-ip-address.
 
