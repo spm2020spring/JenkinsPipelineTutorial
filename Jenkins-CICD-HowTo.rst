@@ -25,7 +25,7 @@ Install jenkins
 sudo apt-get install jenkins
 
 
-Note: execute the above comand under root account.
+Note: execute the above command under root account.
 
 
 
@@ -62,13 +62,13 @@ Get the initial password for admin
 
 `sudo cat /var/lib/jenkins/secrets/initialAdminPassword`
 
-Creat an administrative account.
+Create an administrative account.
 
 
 Give account name jenkins proper permission
 -----------------------------------------------
 
-Give jenkins the docker permission if it is to build a web appliaction that uses Docker.
+Give jenkins the docker permission if it is to build a web application that uses Docker.
 
 `sudo usermod -a -G docker jenkins`
 
