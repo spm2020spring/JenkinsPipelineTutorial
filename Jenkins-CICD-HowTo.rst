@@ -143,6 +143,14 @@ restrict memory usage, add ``-Xmx256m`` to ``JAVA_ARGS`` in
 ``Xmx256m`` will restrict Java's memory consumption to 256MB.
 
 
+Combined use with Selenium for automated testing
+--------------------------------------------------
+
+Tips:
+
+- Use docker image selenium/standalone-chrome to run end to end testing without GUI.
+- Must close driver after use: ``driver.quit()``.
+  
 
 
 
