@@ -1,4 +1,4 @@
-Continuous Integration And Testing Pipeline Using Jenkins
+Continuous Integration and Testing Pipeline With Jenkins
 ==========================================================
 
 :Date: 2021-02-07
