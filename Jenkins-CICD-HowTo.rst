@@ -124,6 +124,21 @@ in Jenkinsfile.
 Now we could run the web app at ``my-server-ip-address:91``.
 
 
+Limit memory usage
+-------------------
+
+Jenkins by default consumes a lot of memory space (e.g., 1GB).  To
+restrict memory usage, add ``-Xmx256m`` to ``JAVA_ARGS`` in
+/etc/default/jenkins and restart the jenkins service::
+
+  sudo systemctl restart jenkins
+
+``Xmx256m`` will restrict Java's memory consumption to 256MB.
+
+
+
+
+
 References
 -------------------
 
